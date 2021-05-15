@@ -1,4 +1,4 @@
-SELECT order_id, order_date, ship_date
-FROM orders
-WHERE ship_date is null
-ORDER BY order_id DESC
+SELECT 100 AS price, 
+0.07 AS tax_rate,
+100 * 0.07 AS tax_amount,
+100 + (100 * 0.07) AS total
