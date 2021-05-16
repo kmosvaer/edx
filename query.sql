@@ -1,4 +1,5 @@
-SELECT category_name, product_name, list_price
-FROM products JOIN categories
-ON products.category_id = categories.category_id
-ORDER BY category_name, product_name ASC
+SELECT first_name, last_name, line1, city, state, zip_code
+FROM addresses a JOIN customers c
+ON a.customer_id = c.customer_id
+WHERE email_address = 'allan.sherwood@yahoo.com'
+ORDER BY zip_code
