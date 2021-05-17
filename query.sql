@@ -1,9 +1,8 @@
-SELECT last_name, first_name, order_date, product_name, item_price, discount_amount, quantity
-FROM customers c
-	INNER JOIN orders o
-		ON c.customer_id = o.customer_id
-	INNER JOIN order_items oi
-		ON oi.order_id = o.order_id
-	INNER JOIN products p
-		ON p.product_id = oi.product_id
-ORDER BY last_name, order_date, product_name
+SELECT 'SHIPPED' as ship_status, order_id, order_date
+	FROM orders
+	WHERE ship_date IS NOT NULL
+UNION 
+SELECT 'NOT SHIPPED' AS ship_status, order_id, order_date
+	FROM orders
+    WHERE ship_date IS NULL
+ORDER BY order_date
