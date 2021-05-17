@@ -1,5 +1,5 @@
 SELECT first_name, last_name, line1, city, state, zip_code
-FROM addresses a JOIN customers c
+FROM customers c JOIN addresses a
 ON a.customer_id = c.customer_id
-WHERE email_address = 'allan.sherwood@yahoo.com'
+WHERE address_id = shipping_address_id
 ORDER BY zip_code
